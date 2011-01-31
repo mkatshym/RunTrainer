@@ -16,8 +16,8 @@ from RTUtilities.RTUtilities import *
 
 class RTUserList(webapp.RequestHandler):
     '''
-    classdocs
-    
+    class documentation
+
     '''
     def get(self):
         
