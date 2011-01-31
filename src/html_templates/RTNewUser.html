@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Run Trainer: Create New User</title>
+</head>
+<body>
+
+<form action="/createuser" method="post">
+  <div><label for="first_name">First Name</label><input type="text" name="first_name">
+  <div><label for="role">Trainer?</label><input type="checkbox" name="role" value="trainer">
+  <div><input type="submit" value="Create User"></div>
+</form>
+
+<br>
+
+<a href="{{ url }}">{{ url_linktext }}</a>
+
+
+</body>
+</html>
