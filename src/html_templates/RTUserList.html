@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Run Trainer: User List</title>
+
+
+<link rel="stylesheet" type="text/css" media="screen" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/ui-lightness/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="css/ui.jqgrid.css" />
+
+<script src="https://www.google.com/jsapi?key=ABQIAAAAsefX1uviZSszLgpt7NAMSxRK2GURZ1BvYrlZqmYjdqEIT5uC5xTVnfiUGNxlGUiDp4VzLQNBqiecGA" type="text/javascript"></script>
+<script type="text/javascript">
+google.load('jquery','1.4.4');
+google.load('jqueryui','1.8.9');
+</script>
+<script src="js/grid.locale-en.js" type="text/javascript"></script>
+<script src="js/jquery.jqGrid.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $.jgrid.useJSON = true;
+</script>
+<script type="text/javascript">
+$(function(){
+        jQuery("#list2").jqGrid({
+        url:'/getuserlist',
+        datatype: "json",
+        mtype: "GET",
+        jsonReader: {root: "rows",page: "page",repeatitems:false,records: "records",total: "total",id: "0"},
+        colNames:[],
+        colModel:[
+                  {name:'RT_first_name',index:'RT_first_name',label:'First Name',width:200},
+                  {name:'RT_last_name',index:'RT_last_name',label:'Last Name',width:200},
+                  {name:'RT_user_id',index:'RT_user_id',label:'User ID',width:200}],
+        rowNum:10,
+        rowList:[10,20,30],
+        pager: '#pager2',
+        sortname: 'RT_first_name',
+        viewrecords: true,
+        sortorder: "asc",
+        caption:"User List"
+});
+jQuery("#list2").jqGrid('navGrid','#pager2',{edit:false,add:false,del:false});
+});
+</script>
+</head>
+<body>
+
+Welcome to the User List, {{ current_user.RT_first_name }}.
+<br>
+
+
+
+<table id="list2"></table>
+<div id="pager2"></div>
+
+<a href="{{ url }}">{{ url_linktext }}</a>
+
+
+</body>
+</html>

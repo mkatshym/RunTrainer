@@ -17,5 +17,8 @@ class RTUser(db.Model):
     RT_birthdate = db.DateProperty()
     RT_shirt_size = db.StringProperty()
 
+    def to_dict(self):
+        return dict([(p, unicode(getattr(self, p))) for p in self.properties()])
         
-        
+   
+   

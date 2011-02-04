@@ -10,6 +10,12 @@ Welcome to your dashboard, {{ current_user.RT_first_name }}.
 
 You are a {{ current_user.RT_role }}.
 
+{% ifequal current_user.RT_role "trainer" %}
+
+<a href="/userlist">User List</a>
+
+{% endifequal %}
+
 <a href="{{ url }}">{{ url_linktext }}</a>
 
 </body>

@@ -12,12 +12,16 @@ from RTModules.RTCreateUser import RTCreateUser
 from RTPages.RTMainPage import RTMainPage
 from RTPages.RTDashBoard import RTDashBoard
 from RTPages.RTNewUser import RTNewUser
+from RTPages.RTUserList import RTUserList
+from RTModules.RTGetUserList import RTGetUserList
 
 
 application = webapp.WSGIApplication([('/',RTMainPage),
                                       ('/newuser',RTNewUser),
                                       ('/dashboard',RTDashBoard),
-                                      ('/createuser',RTCreateUser)],
+                                      ('/createuser',RTCreateUser),
+                                      ('/userlist',RTUserList),
+                                      ('/getuserlist',RTGetUserList)],
                                       debug=True)
 
 def main():
