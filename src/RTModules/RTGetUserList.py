@@ -22,7 +22,7 @@ class RTGetUserList(webapp.RequestHandler):
     '''
     def get(self):
         
-        if not checkuser():
+        if not isuser():
             self.redirect('/')
             
         if not istrainer():

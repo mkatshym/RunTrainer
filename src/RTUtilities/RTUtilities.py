@@ -13,7 +13,7 @@ from google.appengine.ext import db
 
 from RTModules.RTUser import RTUser
 
-def checkuser():
+def isuser():
     current_user = users.get_current_user()
     if current_user == None:
         return False

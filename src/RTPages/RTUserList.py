@@ -21,7 +21,7 @@ class RTUserList(webapp.RequestHandler):
     '''
     def get(self):
         
-        current_user = checkuser()
+        current_user = isuser()
         
         if not current_user:
             self.redirect('/')
