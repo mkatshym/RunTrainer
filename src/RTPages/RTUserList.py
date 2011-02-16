@@ -23,11 +23,11 @@ class RTUserList(webapp.RequestHandler):
         
         current_user = isuser()
         
-        if not current_user:
+        if not isuser():
             self.redirect('/')
             
-        if current_user.RT_role == "student":
-            self.redirect('/dashbaord')
+        if not istrainer():
+            self.redirect('/dashboard')
         
         url = users.create_logout_url('/')
         url_linktext = 'Logout'
